@@ -1,0 +1,18 @@
+@(status: twitter4j.Status)
+
+<a href="javascript:window.open('/profile/@status.getUser.getScreenName','profile',
+    'width=400, height=600, menubar=no, location=no, toolbar=no, dependent=yes, dialog=no');void(0);">
+    <img src="@status.getUser.getProfileImageURL" class="avatar"></a>&nbsp;
+<a href="javascript:window.open('/profile/@status.getUser.getScreenName','profile',
+                'width=400, height=600, menubar=no, location=no, toolbar=no, dependent=yes, dialog=no');void(0);"
+                class="userName">
+    @status.getUser.getName</a>
+ <a href="javascript:window.open('/profile/@status.getUser.getScreenName','profile',
+                    'width=400, height=600, menubar=no, location=no, toolbar=no, dependent=yes, dialog=no');void(0);"
+                    class="screenName" >&nbsp;&#64;@status.getUser.getScreenName</a><br>
+<p class="twitText">@Html(utils.ReplaceLink.All(status.getText))</p>
+@if(status.getRetweetCount != 0) {<span class="ret-count">@status.getRetweetCount retweets</span>}
+@if(status.getFavoriteCount != 0) {<span class="ret-count">@status.getFavoriteCount favs</span>}
+@if(status.getRetweetCount != 0 | status.getFavoriteCount != 0) {<br>}
+<a href="https://twitter.com/@status.getUser.getScreenName/status/@status.getId" class="postTime" target="_blank">
+    @{augmentString("%tY/%<tm/%<td %<tR") format(status.getCreatedAt)}</a>

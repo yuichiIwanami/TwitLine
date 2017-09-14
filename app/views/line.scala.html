@@ -1,0 +1,36 @@
+@(lists: Map[String, twitter4j.ResponseList[twitter4j.Status]])
+
+@main("Tweet Line") {
+    <script type="text/javascript">
+        <!--
+        function popup_window(obj) {
+            wobj = window.open("", "pwin",'width=400, height=575, menubar=no, ' +
+                            'toolbar=no, dependent=yes, dialog=no');
+            obj.target = "pwin";
+            wobj.focus();
+        }
+         //-->
+    </script>
+    <div id="header" class="main-header">
+        @helper.form(action = routes.TweetLine.search, 'class -> "",
+                                            'onsubmit -> "return popup_window(this)") {
+            <input class="search-box" type="search" name="word" placeholder="Words for Search"/>
+            <input class="search-button" type="submit" value="search" />
+        }
+    </div>
+    <div class="stream-container">
+    @for((listName, list) <- lists) {
+        <div class="stream-box">
+            <div class="stream-header">
+                <span class="twitter-icon"></span>
+                <div class="streamName" title="@listName">@listName</div>
+            </div>
+            <div class="stream-body">
+            @for(status <- list) {
+                @compo.item(status)
+            }
+            </div>
+        </div>
+    }
+    </div>
+}

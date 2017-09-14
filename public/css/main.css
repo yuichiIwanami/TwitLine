@@ -1,0 +1,347 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input.search-box {
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 10px;
+    right: 80px;
+    width: 200px;
+}
+.search-button {
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+
+div.main-header {
+   /* background: rgb(201, 204, 207) url(https://dpjw5kqcbwqqv.cloudfront.net/v1/images/themes/blue_steel/maps/trim.18f1602c.png) repeat-x 0px 0px;
+    color: rgb(0, 0, 0);*/
+    display: block;
+    float: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 38px;
+    left: 43px;
+    margin: 0px;
+    min-width: 960px;
+    padding: 0px;
+    position: fixed;
+    right: 0px;
+    width: 1058px;
+    z-index: 100;
+}
+.timeline {
+    border-color: rgb(135, 137, 139);
+    color: rgb(0, 0, 0);
+    cursor: auto;
+    display: block;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    margin-right: 1px;
+    left: 15px;
+    /*padding: 0 15px;*/
+    width: 350px;
+}
+.mentions {
+    border-color: rgb(135, 137, 139);
+    color: rgb(0, 0, 0);
+    cursor: auto;
+    display: block;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    margin-right: 1px;
+    padding: 0 15px;
+    /*width: 350px;*/
+}
+.prof-tabs {
+    padding: 15px 15px 0 15px;
+    width: 400px;
+}
+.stream-container {
+    background-attachment: scroll;
+    background-clip: border-box;
+    /*background-image: url(https://d2l6uygi1pgnys.cloudfront.net/v1/images/themes/blue_steel/content-texture.20131113192445.png);*/
+    background-origin: padding-box;
+    background-size: auto;
+    bottom: 0;
+    box-shadow: rgb(232, 233, 234) 0 1px 0 0 inset;
+    color: rgb(0, 0, 0);
+    cursor: auto;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    left: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    width: 1404px;
+}
+.stream-box {
+    border-color: rgb(135, 137, 139);
+    color: rgb(0, 0, 0);
+    cursor: auto;
+    display: block;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    margin-right: 1px;
+    width: 350px;
+}
+.stream-header {
+    background: rgb(82, 123, 155) url(https://d2l6uygi1pgnys.cloudfront.net/v1/images/themes/blue_steel/maps/trim.20131113192445.png) repeat-x 0 -100px;
+    height: 31px;
+    width: 350px;
+}
+.streamName {
+    color: rgb(255, 255, 255);
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 12px;
+    margin-right: 95px;
+    margin-top: 3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 7px;
+    text-overflow: ellipsis;
+    text-shadow: rgba(0, 0, 0, 0.368627) 0 -1px 0;
+    white-space: nowrap;
+    width: 226px;
+}
+.stream-body {
+    border-right: 1px solid rgb(135, 137, 139);
+    color: rgb(0, 0, 0);
+    cursor: auto;
+    display: block;
+    font-size: 12px;
+    height: 550px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 350px;
+}
+.stream-body .jspVerticalBar {
+    width: 8px;
+}
+.stream-body .jspTrack {
+    background: #eee;
+}
+.stream-body .jspDrag {
+    background: #ccc;
+}
+
+.stream-item {
+    background-attachment: scroll;
+    background-clip: border-box;
+    /*background-image: url(https://d2l6uygi1pgnys.cloudfront.net/v1/images/themes/blue_steel/streams/message-gradient.20131113192445.png);*/
+    background-origin: padding-box;
+    background-size: auto;
+    border: 1px solid rgb(191, 191, 191);
+    color: rgb(17, 17, 17);
+    cursor: auto;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 6px 15px 5px 42px;
+    position: relative;
+    width: 350px;
+    word-wrap: break-word;
+}
+.timeline-body {
+    border-right: 1px solid rgb(135, 137, 139);
+    color: rgb(0, 0, 0);
+    cursor: auto;
+    display: block;
+    font-size: 12px;
+    height: 470px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 350px;
+}
+.timeline-body .jspVerticalBar {
+    width: 8px;
+}
+.timeline-body .jspTrack {
+    background: #eee;
+}
+.timeline-body .jspDrag {
+    background: #ccc;
+}
+
+ul.nav-tabs {
+    border-bottom: 1px solid rgb(221, 221, 221);
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 42px;
+    line-height: 20px;
+    list-style: none outside none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+    width: 666px;
+}
+.prof-counts {
+    /*border-bottom: 1px solid rgb(221, 221, 221);*/
+    /*box-sizing: border-box;*/
+    /*color: rgb(51, 51, 51);*/
+    /*display: block;*/
+    /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    /*font-size: 14px;*/
+    /*height: 42px;*/
+    left: 180px;
+    /*line-height: 20px;*/
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    padding: 0;
+    top: 90px;
+}
+
+li.active {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: block;
+    float: left;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 42px;
+    line-height: 20px;
+    list-style: none outside none;
+    margin-bottom: -1px;
+    position: relative;
+    text-align: left;
+    width: 70px;
+}
+
+img.avatar {
+    border-radius: 2px;
+    height: 30px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 30px;
+}
+.prof-avatar {
+    border: 5px #fffafa;
+    border-radius: 4px;
+    /*margin: 15px 0 0 15px;*/
+    /*height: 30px;*/
+    left: 45px;
+    position: relative;
+    text-shadow: rgb(255, 255, 255) 0px 1px 0px;
+    top: 30px;
+    /*width: 30px;*/
+    z-index: 2;
+}
+.prof-banner {
+    /*height: 50%;*/
+    position: absolute;
+    left: 0;
+    /*top: 0;*/
+    width: 400px;
+    z-index: 1;
+}
+.ret-avatar {
+    border-radius: 1px;
+    height: 18px;
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    width: 18px;
+    z-index: 1;
+}
+
+p.twitText {
+   font-family: Arial, Helvetica, sans-serif;
+   margin-top: 3px;
+   margin-right: 10px;
+   margin-bottom: 3px;
+}
+span.twitter-icon {
+    background: url(https://du6h72rmez42p.cloudfront.net/v1/images/maps/icons-sn.20131113192444.png) -94px 0;
+    color: rgb(0, 0, 0);
+    display: block;
+    float: left;
+    height: 30px;
+    outline: rgb(0, 0, 0) none 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-left: 30px;
+    text-align: left;
+    text-decoration: none solid rgb(0, 0, 0);
+    text-indent: -11988px;
+    vertical-align: middle;
+    width: 0;
+}
+.ret-count {
+    color: rgb(47, 121, 173);
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    height: 14px;
+    outline: rgb(153, 153, 153) none 0;
+    text-decoration: none solid rgb(153, 153, 153);
+}
+
+a.postTime {
+    clear: left;
+    color: rgb(120, 120, 120);
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 14px;
+    margin-top: 4px;
+    outline: rgb(100, 100, 100) none 0;
+    text-decoration: none solid rgb(100, 100, 100);
+    vertical-align: middle;
+}
+.screenName {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    outline: rgb(0, 0, 0) none 0;
+    text-decoration: none solid rgb(0, 0, 0);
+}
+.userName {
+    color: rgb(49, 73, 104);
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 12px;
+    line-height: 12px;
+    outline: rgb(49, 73, 104) none 0;
+    text-decoration: none solid rgb(49, 73, 104);
+}
+
+table.profile {
+    left: 30px;
+    /*margin: 1px;*/
+    /*padding: 1px;*/
+    position: relative;
+    top: 70px;
+    width: 340px;
+}

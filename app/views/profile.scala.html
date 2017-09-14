@@ -1,0 +1,98 @@
+@(user: twitter4j.User, timeline: Seq[twitter4j.Status], mentions: Seq[twitter4j.Status])
+
+@main("Profile") {
+    <script type="text/javascript">
+        $('#profTab').find('a').click(function (e) {
+            e.preventDefault ()
+            $(this).tab('show')
+        })
+    </script>
+    <div class="prof-tabs">
+        <ul id="profTab" class="nav nav-tabs">
+            <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+            <li><a href="#timeline" data-toggle="tab">Tweets</a></li>
+            <li><a href="#mentions" data-toggle="tab">Mention</a></li>
+        </ul>
+    </div>
+
+     <div class="tab-content">
+         <div class="tab-pane active profile" id="profile">
+             <a href="https://twitter.com/@user.getScreenName" target="_blank">
+                <img class="prof-avatar" src="@user.getBiggerProfileImageURL"></a>
+             @*<img class="prof-banner" src="@user.getProfileBannerURL">*@
+             <ul class="prof-counts">
+                 <li>@{augmentString("%1$,3d") format(user.getFriendsCount)} following</li>
+                 <li>@{augmentString("%1$,3d") format(user.getFollowersCount)} followers</li>
+                 <li>@{augmentString("%1$,3d") format(user.getListedCount)} listed</li>
+                 <li>@{augmentString("%1$,3d") format(user.getStatusesCount)} tweets</li>
+             </ul>
+             <table class="profile">
+                 <tbody>
+                  <tr>
+                      <td>
+                         <strong>Description</strong><br>
+                          @Html(utils.ReplaceLink.Url(user.getDescription))<br></td>
+                  </tr>
+                  <tr>
+                      <td>
+                         <strong>Twitter</strong><br>
+                             <a href="https://twitter.com/@user.getScreenName" target="_blank">
+                                 twitter.com/@user.getScreenName
+                             </a><br></td>
+                  </tr>
+                  <tr>
+                      <td>
+                         <strong>Website</strong><br>
+                             <a href="@user.getURL" target="_blank">
+                                 @user.getURLEntity.getDisplayURL
+                             </a><br></td>
+                  </tr>
+                  <tr>
+                      <td>
+                         <strong>Location</strong><br>
+                                 @user.getLocation
+                            </td>
+                  </tr>
+                 </tbody>
+             </table>
+             <p></p>
+         </div>
+
+        @* <script type="text/javascript">
+         $ ( function ( ) { $ ( '.timeline-body' ).jScrollPane ( ) ; } ) ;
+         </script>*@
+         <div class="tab-pane" id="timeline">
+             <div class="timeline">
+                 <div class="stream-header">
+                     <span class="twitter-icon"></span>
+                     <div class="streamName" title="stream name">
+                         @user.getScreenName's TimeLine
+                     </div>
+                 </div>
+                 <div class="timeline-body">
+                 @for(status <- timeline) {
+                     @compo.item(status)
+                 }
+                 </div>
+             </div>
+         </div>
+
+        <div class="tab-pane mentions" id="mentions">
+            <div class="stream-header">
+                <span class="twitter-icon"></span>
+                <div class="streamName" title="stream name">
+                    @user.getScreenName's Mentions
+                </div>
+            </div>
+            <div class="timeline-body">
+            @for(status <- mentions) {
+                @if(status.getRetweetedStatus == null) {
+                 <div class="stream-item">
+                     @compo.item_base(status)
+                 </div>
+                }
+            }
+            </div>
+        </div>
+     </div>
+}

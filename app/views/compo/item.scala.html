@@ -1,0 +1,11 @@
+@(status: twitter4j.Status)
+
+    <div class="stream-item">
+    @status.getRetweetedStatus match {
+        case null => {@compo.item_base(status)}
+        case _ => {
+            @compo.item_base(status.getRetweetedStatus)
+            <img src="@status.getUser.getProfileImageURL" class="ret-avatar">&nbsp;
+            }
+    }
+    </div>

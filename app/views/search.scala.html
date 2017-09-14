@@ -1,0 +1,32 @@
+@(word: String, statuses: Seq[twitter4j.Status])
+
+@main("Search Result") {
+
+    <div id="header" class="main-header">
+    @helper.form(action = routes.TweetLine.search, 'class -> "",
+        'onsubmit -> "return popup_window(this)") {
+        <input class="search-box" type="search" name="word" placeholder="Words for Search" value="@word"/>
+        <input class="search-button" type="submit" value="search" />
+    }
+    </div>
+    <script type="text/javascript">
+    $ ( function ( ) { $ ( '.timeline-body' ).jScrollPane ( ) ; } ) ;
+    </script>
+    <div class="timeline" style="top: 35px">
+        <div class="stream-header">
+            <span class="twitter-icon"></span>
+            <div class="streamName" title="stream name">
+                Result for @word
+            </div>
+        </div>
+        <div class="timeline-body">
+        @for(status <- statuses) {
+           @if(status.getRetweetedStatus == null) {
+            <div class="stream-item">
+                @compo.item_base(status)
+             </div>
+            }
+        }
+        </div>
+    </div>
+}
